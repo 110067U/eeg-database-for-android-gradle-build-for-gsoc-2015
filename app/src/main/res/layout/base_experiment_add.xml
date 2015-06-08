@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/detail_padding">
+
+        <include layout="@layout/base_experiment_add_singlechoice"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/experiment_env_note"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:id="@+id/experiment_add_env_note"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/experiment_temperature"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:id="@+id/experiment_add_temperature"/>
+
+        <include layout="@layout/base_experiment_add_times"/>
+
+        <include layout="@layout/base_experiment_add_electrode"/>
+
+        <include layout="@layout/base_experiment_add_multichoice"/>
+
+        <TextView
+                android:text="@string/experiment_add_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@android:drawable/alert_dark_frame"/>
+
+    </LinearLayout>
+</ScrollView>

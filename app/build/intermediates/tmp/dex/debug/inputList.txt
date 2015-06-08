@@ -1,0 +1,11 @@
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\classes\debug
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-955be90a69acb218d9f4812b69c6469fd1549ef4.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0-7dcebca415bc47b371868889fd1a55fedd7fdb9f.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\spring-android-core-2.0.0.M1-64d3dde4b350bf27437ff8cfd0c1bf8933b91e76.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\spring-android-rest-template-2.0.0.M1-51bab3b04a2048bff8fff872efa0deab6525cb54.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-695bce57bc949085a5a000338e482dfb3f17a3c2.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\stax-1.2.0-66bd274cdfdeffdbf4cadb332ebf99f2840ba6a7.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.1.1-e8598f0f03d66a1716f64fb2d9e849dc63ef0e25.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\simple-xml-2.7.1-32ddba1005c742a9659763460fef0a776f6bdbd1.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\classes-34a737af3a997b06330c46ed1a0d0da13adf4547.jar
+D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.1.3-63ca7031ebdb52f47d84eb3605bdf37ece62677e.jar

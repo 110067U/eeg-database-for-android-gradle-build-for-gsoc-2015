@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/scenario_refresh"
+            android:icon="@drawable/ic_action_refresh"
+            android:showAsAction="ifRoom|withText"
+            android:title="@string/app_refresh">
+    </item>
+
+    <item
+            android:id="@+id/scenario_search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:showAsAction="collapseActionView|ifRoom|withText"
+            android:title="@string/app_search">
+    </item>
+
+</menu>

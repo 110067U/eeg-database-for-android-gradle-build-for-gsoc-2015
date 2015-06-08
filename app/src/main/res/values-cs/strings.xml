@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EEG Databáze</string>
+    <string name="app_refresh">Obnovit</string>
+    <string name="app_search">Hledat</string>
+    <string name="app_dashboard">Přehled</string>
+    <string name="app_welcome">Vítejte v EEG Databázi!</string>
+    <string name="app_underDevelopment">Tato aplikace je aktuálně ve vývoji, tudíž jsou její možnosti omezené a občas se
+        setkáte s chybami.
+        Děkuji za trpělivost a hlášení chyb na GitHub stránkách projektu!
+    </string>
+
+    <string name="app_intro">Tato aplikace byla vytvořena za účelem pokrýt základní potřeby EEG výzkumníků.\n
+        \n
+        Kliknutím na menu v levém horním rohu můžete vybrat z následujících sekcí:\n
+        *
+        <b>Scénáře</b>
+        - Zde můžete procházet základní informace o scénářích a zakládat vlastní scénáře.\n
+        *
+        <b>Experimenty</b>
+        - Sekce pro procházení informací o experimentech a zakládání nových.\n
+        *
+        <b>Soubor k nahrání</b>
+        - Zamiřte sem, pokud potřebujete nahrát k experimentu nový soubor.\n
+        *
+        <b>Rezervace</b>
+        - Zde můžete využít rezervační systém EEG laboratoře a zarezervovat laboratoř pro svůj tým!\n
+        *
+        <b>Nastavení</b>
+        - Místo pro údaje potřebné pro správný chod aplikace.\n
+        \n
+        Doufám, že shledáte aplikaci užitečnou!
+    </string>
+
+    <string name="nav_open">Otevřít navigaci</string>
+    <string name="nav_close">Skrýt navigaci</string>
+
+    <string name="login_mail_suffix">\ @students.zcu.cz</string>
+    <string name="login_protocol">https://</string>
+    <string name="menu_save">Uložit</string>
+    <string name="menu_discard">Zrušit</string>
+    <string name="menu_login">Přihlásit se</string>
+    <string name="logo">Logo</string>
+
+    <string name="no">ne</string>
+    <string name="yes">yes</string>
+
+    <string name="mandatory">Povinné</string>
+    <string name="optional">Volitelné</string>
+
+    <string name="error_offline">Připojení není dostupné. Požadavek nemohl být vykonán.</string>
+    <string name="error_connection">Vyskytly se potíže s připojením k serveru. Zkuste později.</string>
+    <string name="error_date_comparison">Rezervace nemůže skončit, než vůbec začala!</string>
+    <string name="error_unknown_host">Neplatná adresa!</string>
+    <string name="error_invalid_password">Heslo nemůže být prázdné!</string>
+    <string name="error_invalid_url">Zadaná hodnota není platnou URL!</string>
+    <string name="error_invalid_username">Uživatelské jméno musí mít podobu mailové adresy!</string>
+    <string name="error_host_unreach">Server nedostupný (neexistuje trasa). Je správně hostname/IP?</string>
+    <string name="error_host_timeout">Spojení vypršelo. Zkuste znovu.</string>
+    <string name="error_host_con_refused">Spojení zamítnuto. Zadali jste správně přihlašovací údaje?</string>
+    <string name="error_http_400">Aplikace vykonala neplatný požadavek na server.</string>
+    <string name="error_http_401">Nezdařilo se ověřit uživatele. Zkontrolujte přihlašovací údaje.</string>
+    <string name="error_http_403">Nemáte práva potřebná k požadovanému úkonu.</string>
+    <string name="error_http_404">Umístění nenalezeno. Pravděpodobně chyba serveru, pro jistotu ale zkontrolujte URL
+        serveru.
+    </string>
+    <string name="error_http_405">Požadavek není povolen.</string>
+    <string name="error_http_408">Vypršela doba požadavku.</string>
+    <string name="error_http_500">Nastala chyba serveru.</string>
+    <string name="error_http_503">Služba je dočasně nedostupná. Zkuste znovu později.</string>
+    <string name="error_no_file_selected">Nevybrán žádný soubor!</string>
+    <string name="error_no_group_selected">Nevybrána žádná výzkumná skupina!</string>
+    <string name="error_no_experiment_selected">Nevybrán žádný experiment!</string>
+    <string name="error_invalid_mail_format">Neplatný formát mailové adresy!</string>
+    <string name="error_invalid_date_format">Neplatný formát data!</string>
+    <string name="error_empty_field">Pole musí být zadané!</string>
+    <string name="error_ssl">Rozpadlo se SSL spojení. Zkuste znovu.</string>
+    <string name="error_no_type_selected">Nevybrán typ elektrody!</string>
+    <string name="error_no_fix_selected">Nevybráno upevnění elektrody!</string>
+    <string name="error_no_scenario_selected">Nevybrán žádný scénář!</string>
+    <string name="error_no_subject_selected">Není vybrán subjekt!</string>
+    <string name="error_no_artifact_selected">Není vybrán žádný artefakt!</string>
+    <string name="error_no_digitization_selected">Nevybrána digitalizace!</string>
+    <string name="error_no_electrode_system_selected">Nevybrán systém elektrod!</string>
+    <string name="error_no_electrode_location_selected">Nevybráno žádné umístění elektrody!</string>
+    <string name="error_no_weather_selected">Nevybráno počasí!</string>
+    <string name="error_time_start_after_end">Čas začátku nemůže být po času konce!</string>
+
+
+    <!-- Tlacitka -->
+    <string name="button_remove">Odstranit</string>
+
+    <!-- Pracuji... -->
+    <string name="working">Pracuji</string>
+    <string name="working_ws_credentials">Ověřuji přihlašovací informace…</string>
+    <string name="working_ws_msg">Probíhá komunikace s webovou službou…</string>
+    <string name="working_ws_groups">Stahují se dostupné výzkumné skupiny…</string>
+    <string name="working_ws_create">Vytváření nového záznamu…</string>
+    <string name="working_ws_edit">Upravuji záznam…</string>
+    <string name="working_ws_remove">Odstraňuji záznam…</string>
+    <string name="working_ws_upload_data_file">Soubor se nahrává na server…</string>
+    <string name="working_ws_experiments">Stahují se dostupné experimenty…</string>
+    <string name="working_ws_create_user">Vytváření nové osoby…</string>
+    <string name="working_ws_scenarios">Stahují se dostupné scénáře…</string>
+    <string name="working_ws_create_scenario">Vytváření nového scénáře…</string>
+    <string name="working_ws_people">Stahují se dostupné záznamy o jedincích…</string>
+    <string name="working_ws_artifacts">Stahují se existující artefakty…</string>
+    <string name="working_ws_digitization">Stahují se známé druhy digitalizací…</string>
+    <string name="working_ws_hardware">Stahuje se seznam hardwaru…</string>
+    <string name="working_ws_software">Stahuje se seznam softwaru…</string>
+    <string name="working_ws_disease">Stahuje se seznam nemocí…</string>
+    <string name="working_ws_pharmaceutical">Stahuje se seznam farmaceutik…</string>
+    <string name="working_ws_electrode_location">Stahují se umístění elektrod…</string>
+    <string name="working_ws_electrode_type">Stahují se typy elektrod…</string>
+    <string name="working_ws_electrode_fix">Stahuje se seznam upevnění elektrod…</string>
+    <string name="working_ws_electrode_system">Stahuje se seznam systémů elektrod…</string>
+    <string name="working_ws_weather">Stahují se existující záznamy počasí…</string>
+    <string name="working_ws_create_digitization">Vytváření nové digitalizace…</string>
+    <string name="working_ws_create_artifact">Vytváření nového artefaktu…</string>
+    <string name="working_ws_create_disease">Vytváření nového záznamu nemoci…</string>
+    <string name="working_ws_create_electrode_location">Vytváření nového umístění elektrody…</string>
+    <string name="working_ws_create_experiment">Vytváření nového experimentu…</string>
+    <string name="working_ws_create_weather">Vytváření nového záznamu počasí…</string>
+
+    <!-- Vyplne -->
+    <string name="dummy_date">DATUM</string>
+    <string name="dummy_from">OD</string>
+    <string name="dummy_to">DO</string>
+    <string name="dummy_no_record">Není k dispozici žádný záznam</string>
+    <string name="dummy_none">Žádný záznam</string>
+
+    <!-- Rezervace -->
+    <string name="app_reser">Rezervace</string>
+    <string name="reser_create">Vytvořit rezervaci</string>
+    <string name="reser_created">Rezervace vytvořena</string>
+    <string name="reser_edited">Rezervace upravena</string>
+    <string name="reser_removed">Rezervace smazána</string>
+    <string name="reser_removed_update">Rezervace smazána, prosím aktualizujte agendu.</string>
+    <string name="reser_agenda_list_header">Rezervace</string>
+    <string name="reser_add_group_label">Výzkumná skupina</string>
+
+
+    <string name="time_from">Od času</string>
+    <string name="time_to">Do času</string>
+    <string name="time_change">Změnit čas</string>
+    <string name="time_choose_date">Vyberte datum</string>
+    <string name="time_choose_time">Vyberte čas</string>
+    <string name="time_span">Časový rozsah</string>
+
+    <string name="detail">Podrobnosti</string>
+    <string name="reservation_empty_refresh">Nenačteny žádné rezervace. Vytvořte novou, nebo dotknutím aktualizujte
+        seznam.
+    </string>
+    <string name="reser_detail_group">Výzkumná skupina</string>
+    <string name="reser_detail_from">Od</string>
+    <string name="reser_detail_to">Do</string>
+    <string name="reser_detail_separator">-</string>
+    <string name="reser_detail_creator">Vytvořil</string>
+    <string name="reser_detail_time">Časy</string>
+    <string name="reser_detail_contact">Kontakt</string>
+
+    <string name="reser_dialog_remove_header">Smazání rezervace</string>
+    <string name="reser_dialog_remove_body">Skutečně chcete rezervaci smazat?</string>
+
+    <!-- Settings -->
+    <string name="app_settings">Nastavení</string>
+    <string name="settings_url">URL služby</string>
+    <string name="settings_username">Uživatelské jméno</string>
+    <string name="settings_password">Heslo</string>
+    <string name="settings_saved">Nastavení uloženo</string>
+
+    <!--File chooser-->
+    <string name="app_data_file">Soubor k nahrání</string>
+    <string name="fchooser">Vyberte soubor</string>
+    <string name="settings_first_day">Pondělí první den v týdnu</string>
+    <string name="app_characters_left">Dostupných znaků:</string>
+    <string name="data_file_select">Vybrat soubor</string>
+    <string name="data_file_experiment">Experiment</string>
+    <string name="data_file_description">Popis souboru</string>
+    <string name="data_file_upload">Nahrát soubor</string>
+
+    <!-- experiments -->
+    <string name="app_experiments">Experimenty</string>
+    <string name="experiment_empty_refresh">Nenačteny žádné experimenty. Vytvořte nový, nebo dotknutím aktualizujte
+        seznam.
+    </string>
+    <string name="experiment_add">Přidat experiment</string>
+    <string name="experiment_list_all">Všechny experimenty</string>
+    <string name="experiment_list_mine">Mé experimenty</string>
+    <string name="experiment_id">ID experimentu</string>
+    <string name="experiment_env_note">Poznámka k prostředí</string>
+    <string name="experiment_weather">Počasí</string>
+    <string name="experiment_weather_title">Název</string>
+    <string name="experiment_weather_description">Popis</string>
+    <string name="experiment_artifact">Artefakt</string>
+    <string name="experiment_artifact_add">Vytvořit záznam o artefaktu</string>
+    <string name="experiment_artifact_compensation">Kompenzace</string>
+    <string name="experiment_artifact_reject">Podmínka odmítnutí</string>
+    <string name="experiment_digitization">Digitalizace</string>
+    <string name="experiment_digitization_add">Vytvořit nový záznam o digitalizaci</string>
+    <string name="experiment_digitization_filter">Filtr</string>
+    <string name="experiment_digitization_gain">Zesílení</string>
+    <string name="experiment_digitization_sampling_rate">Vzorkovací frekvence</string>
+    <string name="experiment_diseases">Nemoci</string>
+    <string name="experiment_disease_add">Vytvořit nový záznam o nemoci</string>
+    <string name="experiment_temperature">Teplota [°C]</string>
+    <string name="experiment_pharmaceuticals">Farmaceutika</string>
+    <string name="experiment_electrodes">Elektrody</string>
+    <string name="experiment_electrode_system_title">Název systému</string>
+    <string name="experiment_electrode_system_description">Popis systému</string>
+    <string name="experiment_electrode_type">Typ elektrody</string>
+    <string name="experiment_electrode_fix">Upevnění elektrody</string>
+    <string name="experiment_electrode_fix_new">Nové upevnění elektrody</string>
+    <string name="experiment_electrodes_location">Umístění elektrod</string>
+    <string name="experiment_add_scenario">Scénář</string>
+    <string name="experiment_add_group">Výzkumná skupina</string>
+    <string name="experiment_add_subject">Subjekt</string>
+    <string name="experiment_add_artifact">Artefakt</string>
+    <string name="experiment_add_digitization">Digitalizace</string>
+    <string name="experiment_add_disease">Vyberte nemoci</string>
+    <string name="experiment_add_hardware">Vyberte hardware</string>
+    <string name="experiment_add_software">Vyberte software</string>
+    <string name="experiment_add_weather">Vyberte počasí</string>
+    <string name="experiment_add_pharmaceuticals">Vyberte farmaceutika</string>
+    <string name="experiment_add_electrode_location">Vyberte umístění elektrod</string>
+    <string name="experiment_add_electrode_system">Systém elektrod</string>
+    <string name="experiment_add_electrode_fix">Upevnění elektrod</string>
+    <string name="working_ws_create_electrode_fix">Vytváření nového upevnění elektrody…</string>
+    <string name="experiment_add_electrode_type">Typ elektrod</string>
+    <string name="experiment_add_file">Pro nahrání souboru využijte po vytvoření experimentu sekci \"Soubor k nahrání\".</string>
+
+    <!-- scenarios -->
+    <string name="app_scenarios">Scénáře</string>
+    <string name="scenario_empty_refresh">Nenačteny žádné scénáře. Vytvořte nový, nebo dotknutím aktualizujte seznam.
+    </string>
+    <string name="scenario_add">Přidat scénář</string>
+    <string name="scenario_name">Jméno scénáře</string>
+    <string name="scenario_list_mine">Mé scénáře</string>
+    <string name="scenario_list_all">Všechny scénáře</string>
+    <string name="scenario_id">ID scénáře</string>
+    <string name="scenario_description">Popis</string>
+    <string name="scenario_mime">Typ souboru</string>
+    <string name="scenario_file_name">Jméno souboru</string>
+    <string name="scenario_file_length">Velikost souboru</string>
+    <string name="scenario_add_group_label">Výzkumná skupina</string>
+    <string name="scenario_private">Soukromý scénář</string>
+
+    <!-- person management -->
+    <string name="person_add">Přidat osobu</string>
+    <string name="person_name">Jméno</string>
+    <string name="person_surname">Příjmení</string>
+    <string name="person_birthday">Datum narození</string>
+    <string name="person_gender">Pohlaví</string>
+    <string name="person_mail">Email</string>
+    <string name="person_notes">Poznámky</string>
+    <string name="person_lefthand">Levorukost</string>
+    <string name="person_phone">Telefonní číslo</string>
+    <string name="person_owner">Vlastník</string>
+    <string name="person_subject">Subjekt</string>
+    <string name="person_age">Věk</string>
+
+    <!--dialogs-->
+    <string name="dialog_electrode_location_detail">Detail umístění elektrody</string>
+    <string name="dialog_hardware_detail">Detail hardwaru</string>
+    <string name="dialog_software_detail">Detail softwaru</string>
+    <string name="dialog_pharmaceutical_detail">Detail farmaceutika</string>
+    <string name="dialog_disease_detail">Detail nemoci</string>
+
+    <string name="dialog_id">Identifikátor</string>
+    <string name="dialog_title">Pojmenování</string>
+    <string name="dialog_abbr">Zkratka</string>
+    <string name="dialog_description">Podrobnosti</string>
+    <string name="dialog_type">Typ</string>
+    <string name="dialog_button_ok">OK</string>
+    <string name="dialog_button_cancel">Zrušit</string>
+    <string name="dialog_button_clear_selection">Zrušit výběr</string>
+    <string name="dialog_selection_cleared">Výběr zrušen</string>
+
+    <string name="creation_ok">Záznam byl úspěšně vytvořen.</string>
+    <string name="creation_failed">Vytváření záznamu selhalo.</string>
+    <string name="creation_experiment_ok">Záznam byl úspěšně vytvořen; prosím aktualizujte data načtením ze serveru.
+    </string>
+
+</resources>
