@@ -121,18 +121,18 @@ public class FetchScenarios extends CommonService<Void, Void, List<Scenario>> {
     @Override
     protected void onPostExecute(List<Scenario> resultList) {
         scenarioAdapter.clear();
-        if (resultList != null && !resultList.isEmpty()) {
-            Collections.sort(resultList, new Comparator<Scenario>() {
-                @Override
-                public int compare(Scenario lhs, Scenario rhs) {
-                    return lhs.getScenarioId() - rhs.getScenarioId();
-                }
-            });
-
-            for (Scenario scenario : resultList) {
-                scenarioAdapter.add(scenario);
-            }
-        }
+//        if (resultList != null && !resultList.isEmpty()) {
+//            Collections.sort(resultList, new Comparator<Scenario>() {
+//                @Override
+//                public int compare(Scenario lhs, Scenario rhs) {
+//                    return lhs.getScenarioId() - rhs.getScenarioId();
+//                }
+//            });
+//
+//            for (Scenario scenario : resultList) {
+//                scenarioAdapter.add(scenario);
+//            }
+//        }
     }
 
 }

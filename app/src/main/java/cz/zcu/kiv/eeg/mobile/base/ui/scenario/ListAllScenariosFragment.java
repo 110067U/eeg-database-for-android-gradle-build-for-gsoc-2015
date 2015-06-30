@@ -39,7 +39,9 @@ import cz.zcu.kiv.eeg.mobile.base.archetypes.CommonActivity;
 import cz.zcu.kiv.eeg.mobile.base.data.Values;
 import cz.zcu.kiv.eeg.mobile.base.data.adapter.ScenarioAdapter;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.Scenario;
+import cz.zcu.kiv.eeg.mobile.base.localdb.CBDatabase;
 import cz.zcu.kiv.eeg.mobile.base.utils.ConnectionUtils;
+import cz.zcu.kiv.eeg.mobile.base.utils.Keys;
 import cz.zcu.kiv.eeg.mobile.base.ws.asynctask.FetchScenarios;
 
 import java.util.ArrayList;
@@ -57,6 +59,7 @@ public class ListAllScenariosFragment extends ListFragment implements SearchView
     private static ScenarioAdapter adapter;
     private boolean isDualView;
     private int cursorPosition;
+    private CBDatabase db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,10 +130,15 @@ public class ListAllScenariosFragment extends ListFragment implements SearchView
     private void update() {
 
         CommonActivity activity = (CommonActivity) getActivity();
-        if (ConnectionUtils.isOnline(activity)) {
-            new FetchScenarios(activity, getAdapter(), Values.SERVICE_QUALIFIER_ALL).execute();
-        } else
-            activity.showAlert(activity.getString(R.string.error_offline));
+        //Fetch from local db
+        db = new CBDatabase(Keys.DB_NAME, activity);
+        db.createScenarioView("fetchAllScenariosView", "Scenario",getAdapter());
+
+//        if (ConnectionUtils.isOnline(activity)) {
+//            new FetchScenarios(activity, getAdapter(), Values.SERVICE_QUALIFIER_ALL).execute();
+//        } else
+//            activity.showAlert(activity.getString(R.string.error_offline));
+
     }
 
     /**

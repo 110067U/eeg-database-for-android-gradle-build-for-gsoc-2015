@@ -2,74 +2,109 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.1.1\f1b322a9ff873aee0b710af5f33bc10a2eb019ba\jackson-core-2.4.1.1.jar"
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-mapper-asl\1.9.2\95400a7922ce75383866eb72f6ef4a7897923945\jackson-mapper-asl-1.9.2.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="f1b322a9ff873aee0b710af5f33bc10a2eb019ba">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.1.1-e8598f0f03d66a1716f64fb2d9e849dc63ef0e25.jar" />
+        sha1="95400a7922ce75383866eb72f6ef4a7897923945">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.9.2-0205bb849d7c4a36a1640dc42b3b15146409045c.jar" />
     </item>
     <item
-        jar="D:\adt bundle new\adt-bundle-windows-x86_64-20140321\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.couchbase.lite\couchbase-lite-java-core\1.0.4\4a360091f88ddbfa5063af98e43472be61e511e1\couchbase-lite-java-core-1.0.4.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-955be90a69acb218d9f4812b69c6469fd1549ef4.jar" />
-    </item>
-    <item
-        jar="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\classes-34a737af3a997b06330c46ed1a0d0da13adf4547.jar" />
-    </item>
-    <item
-        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-rest-template\2.0.0.M1\6abb1e22445a4e4571c74632804e4179b43d82b5\spring-android-rest-template-2.0.0.M1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6abb1e22445a4e4571c74632804e4179b43d82b5">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\spring-android-rest-template-2.0.0.M1-51bab3b04a2048bff8fff872efa0deab6525cb54.jar" />
-    </item>
-    <item
-        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.1.3\337a63173c2950939158544315ce6d49c19d84a8\jackson-databind-2.4.1.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="337a63173c2950939158544315ce6d49c19d84a8">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.1.3-63ca7031ebdb52f47d84eb3605bdf37ece62677e.jar" />
+        sha1="4a360091f88ddbfa5063af98e43472be61e511e1">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\couchbase-lite-java-core-1.0.4-e7d68803fd57b392b0fffd2498a8c13323004ff0.jar" />
     </item>
     <item
         jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-core\2.0.0.M1\26b2d3262a0c5f8de663deeb6481d132d871fffa\spring-android-core-2.0.0.M1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="26b2d3262a0c5f8de663deeb6481d132d871fffa">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\spring-android-core-2.0.0.M1-64d3dde4b350bf27437ff8cfd0c1bf8933b91e76.jar" />
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\spring-android-core-2.0.0.M1-64d3dde4b350bf27437ff8cfd0c1bf8933b91e76.jar" />
+    </item>
+    <item
+        jar="D:\adt bundle neww\adt-bundle-windows-x86_64-20140321\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-bbf1e0743bca7efb30680d49c9e92ad4d9f75b97.jar" />
+    </item>
+    <item
+        jar="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\exploded-aar\com.couchbase.lite\couchbase-lite-android\1.0.4\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="445253625ce247d2aab409baee78aa222b37e0e4">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\classes-1948893f05086035584f31ec0a1ed401be1d66c7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.1.1\f1b322a9ff873aee0b710af5f33bc10a2eb019ba\jackson-core-2.4.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f1b322a9ff873aee0b710af5f33bc10a2eb019ba">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.1.1-e8598f0f03d66a1716f64fb2d9e849dc63ef0e25.jar" />
+    </item>
+    <item
+        jar="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a8bacf7c8f39ca870e76c4daafe5c567cd317b8d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-rest-template\2.0.0.M1\6abb1e22445a4e4571c74632804e4179b43d82b5\spring-android-rest-template-2.0.0.M1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6abb1e22445a4e4571c74632804e4179b43d82b5">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\spring-android-rest-template-2.0.0.M1-51bab3b04a2048bff8fff872efa0deab6525cb54.jar" />
+    </item>
+    <item
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.github.oxo42\stateless4j\2.4.0\128aca4ace585f0b42faa739d0b968a154debb7a\stateless4j-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="128aca4ace585f0b42faa739d0b968a154debb7a">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\stateless4j-2.4.0-3452adb5505859c63974253ee8f5de716e706d3c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.1.3\337a63173c2950939158544315ce6d49c19d84a8\jackson-databind-2.4.1.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="337a63173c2950939158544315ce6d49c19d84a8">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.1.3-63ca7031ebdb52f47d84eb3605bdf37ece62677e.jar" />
     </item>
     <item
         jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.simpleframework\simple-xml\2.7.1\dd91fb744c2ff921407475cb29a1e3fee397d411\simple-xml-2.7.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="dd91fb744c2ff921407475cb29a1e3fee397d411">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\simple-xml-2.7.1-32ddba1005c742a9659763460fef0a776f6bdbd1.jar" />
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\simple-xml-2.7.1-32ddba1005c742a9659763460fef0a776f6bdbd1.jar" />
     </item>
     <item
         jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\stax\stax\1.2.0\c434800de5e4bbe1822805be5fb1c32d6834f830\stax-1.2.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c434800de5e4bbe1822805be5fb1c32d6834f830">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\stax-1.2.0-66bd274cdfdeffdbf4cadb332ebf99f2840ba6a7.jar" />
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\stax-1.2.0-66bd274cdfdeffdbf4cadb332ebf99f2840ba6a7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-core-asl\1.9.2\8493982bba1727106d767034bd0d8e77bc1931a9\jackson-core-asl-1.9.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8493982bba1727106d767034bd0d8e77bc1931a9">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\jackson-core-asl-1.9.2-d1640a0ac64113c02fe6177332c8b38e4ba4f9f6.jar" />
+    </item>
+    <item
+        jar="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\classes-2a92f93b567e8e2ef41095fd1422810247aecf5e.jar" />
     </item>
     <item
         jar="C:\Users\Isuru\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.0\d6a66c7a5f01cf500377bd669507a08cfeba882a\jackson-annotations-2.4.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0-7dcebca415bc47b371868889fd1a55fedd7fdb9f.jar" />
-    </item>
-    <item
-        jar="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="D:\GSOC\eeg-database-for-android-master\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-695bce57bc949085a5a000338e482dfb3f17a3c2.jar" />
+        <dex dex="D:\GSOC\EEGBase-new\eegbase-new\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0-7dcebca415bc47b371868889fd1a55fedd7fdb9f.jar" />
     </item>
 
 </items>

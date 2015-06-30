@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eeg-database-for-android-master.iml" filepath="$PROJECT_DIR$/eeg-database-for-android-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eegbase-new.iml" filepath="$PROJECT_DIR$/eegbase-new.iml" />
     </modules>
   </component>
 </project>
-
