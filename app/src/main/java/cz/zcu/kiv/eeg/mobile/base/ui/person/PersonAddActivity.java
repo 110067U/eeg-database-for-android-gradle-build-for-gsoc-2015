@@ -151,7 +151,7 @@ public class PersonAddActivity extends SaveDiscardActivity {
             docContent.put("lefthanded", person.getLeftHanded());
             docContent.put("notes", person.getNotes());
             docContent.put("phone", person.getPhone());
-            docContent.put("def_group_id", default_researchGroupId);
+            docContent.put("group_id", null);            //no default research group when creating a subject
 
             String subjectID = null;
             try {
@@ -160,9 +160,9 @@ public class PersonAddActivity extends SaveDiscardActivity {
 
                 //create (member - research group) membership entity
                 Map<String, Object> membershipDocContent = new HashMap<String, Object>();
-                membershipDocContent.put("type", "Research Group Membership");
+                membershipDocContent.put("type", "Membership");
                 membershipDocContent.put("member_id",subjectID);
-                membershipDocContent.put("research_group_id", default_researchGroupId);
+                membershipDocContent.put("group_id", default_researchGroupId);
                 String rgmembershipDocId = db.create(membershipDocContent);
 
                 assert(subjectID != null);

@@ -63,7 +63,6 @@ public class FetchScenariosDB {
 
         SharedPreferences tempDataChk = ctx.getSharedPreferences(Values.PREFS_TEMP, Context.MODE_PRIVATE);
         String loggeduserDocID    = tempDataChk.getString("loggedUserDocID", null);
-        String resgrpdocID        = tempDataChk.getString("researchGrpDocId", null);
 
         View myScenariosView = database.getView(viewName);
 
@@ -100,6 +99,12 @@ public class FetchScenariosDB {
                     scenario.setFilePath(row.getDocument().getProperties().get("filePath").toString());
                     scenario.setFileLength(row.getDocument().getProperties().get("fileLength").toString());
                     scenario.setOwnerId(row.getDocument().getProperties().get("ownerId").toString());
+                    if(row.getDocument().getProperties().get("ownerUserName")!=null){
+                        scenario.setOwnerUserName(row.getDocument().getProperties().get("ownerUserName").toString());
+                    }else{
+                        scenario.setOwnerUserName("");
+                    }
+
                     fetchedScenarioList.add(scenario);
                 }
             }
@@ -144,12 +149,9 @@ public class FetchScenariosDB {
             for (Iterator<QueryRow> it = result; it.hasNext(); ) {
                 QueryRow row = it.next();
 
-                //fetch all owner's public scenarios only + other scenarios which belongs to the research group where the logged user is a member
-                //What about logged user's private scenarios
-                //what about other scenarios where logged user is a member ?
+                //getting logged users private+public scenarios+ other public scenarios + other members private scenarios of same group
 
-                if(row.getDocument().getProperties().get("ownerId").toString().equals(loggeduserDocID)&&(!(Boolean) row.getDocument().getProperties().get("isPrivate"))){
-                    //Retrieve data if Scenario is Public
+//                if(row.getDocument().getProperties().get("ownerId").toString().equals(loggeduserDocID)){
                     Scenario scenario = new Scenario();
                     scenario.setScenarioId(row.getDocumentId().toString());
                     scenario.setScenarioName(row.getDocument().getProperties().get("scenarioName").toString());
@@ -161,8 +163,13 @@ public class FetchScenariosDB {
                     scenario.setFilePath(row.getDocument().getProperties().get("filePath").toString());
                     scenario.setFileLength(row.getDocument().getProperties().get("fileLength").toString());
                     scenario.setOwnerId(row.getDocument().getProperties().get("ownerId").toString());
+                    if(row.getDocument().getProperties().get("ownerUserName")!=null){
+                        scenario.setOwnerUserName(row.getDocument().getProperties().get("ownerUserName").toString());
+                    }else{
+                        scenario.setOwnerUserName("");
+                    }
                     fetchedScenarioList.add(scenario);
-                }
+//                }
             }
 
             scenarioAdapter.clear();

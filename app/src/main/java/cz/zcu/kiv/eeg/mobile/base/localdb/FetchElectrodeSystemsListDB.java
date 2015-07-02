@@ -86,9 +86,22 @@ public class FetchElectrodeSystemsListDB {
                 //fetch all electrode system records
                 ElectrodeSystem electrodeSystem = new ElectrodeSystem();
                 electrodeSystem.setId(row.getDocumentId().toString());
-                electrodeSystem.setTitle(row.getDocument().getProperties().get("title").toString());
-                electrodeSystem.setDescription(row.getDocument().getProperties().get("description").toString());
-                electrodeSystem.setDefaultNumber((Integer) row.getDocument().getProperties().get("default_number"));
+                if(row.getDocument().getProperties().get("title")!=null){
+                    electrodeSystem.setTitle(row.getDocument().getProperties().get("title").toString());
+                }else{
+                    electrodeSystem.setTitle("");
+                }
+                if(row.getDocument().getProperties().get("description")!=null){
+                    electrodeSystem.setDescription(row.getDocument().getProperties().get("description").toString());
+                }else{
+                    electrodeSystem.setDescription("");
+                }
+                if(row.getDocument().getProperties().get("default_number")!=null){
+                    electrodeSystem.setDefaultNumber((Integer) row.getDocument().getProperties().get("default_number"));
+                }else{
+                    electrodeSystem.setDefaultNumber(0);
+                }
+
                 fetchedElectrodeSystemList.add(electrodeSystem);
             }
 

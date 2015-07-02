@@ -135,9 +135,7 @@ public class ListMineScenariosFragment extends ListFragment implements SearchVie
         CommonActivity activity = (CommonActivity) getActivity();
         //Fetch from local db
         db = new CBDatabase(Keys.DB_NAME, activity);
-        db.createScenarioView("fetchMyScenariosView", "Scenario",getAdapter());
-
-
+        db.createScenarioView(getActivity().getResources().getString(R.string.view_fetch_my_scenarios), getActivity().getResources().getString(R.string.doc_type_scenario),getAdapter());
 //        if (ConnectionUtils.isOnline(activity)) {
 //            new FetchScenarios(activity, getAdapter(), Values.SERVICE_QUALIFIER_MINE).execute();
 //        } else

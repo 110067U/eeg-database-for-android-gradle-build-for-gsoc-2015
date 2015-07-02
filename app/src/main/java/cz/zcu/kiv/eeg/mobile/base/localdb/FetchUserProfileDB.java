@@ -20,6 +20,7 @@ import java.util.Map;
 
 import cz.zcu.kiv.eeg.mobile.base.data.adapter.ArtifactAdapter;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.Artifact;
+import cz.zcu.kiv.eeg.mobile.base.data.container.xml.UserProfile;
 import cz.zcu.kiv.eeg.mobile.base.utils.ErrorChecker;
 
 /**
@@ -35,7 +36,7 @@ public class FetchUserProfileDB {
         this.ctx = ctx;
     }
 
-    public String FetchUserProfile(String viewName, final String type){
+    public UserProfile FetchUserProfile(String viewName, final String type){
 
         View userProfileView = database.getView(viewName);
 
@@ -53,19 +54,20 @@ public class FetchUserProfileDB {
         }, "1");
 
         Query query = database.getView(viewName).createQuery();
-        String loggedUserId = null;
+        UserProfile loggedUserProfile = new UserProfile();
 
         try {
             QueryEnumerator result = query.run();
             for (Iterator<QueryRow> it = result; it.hasNext(); ) {
                 QueryRow row = it.next();
-                loggedUserId = row.getDocument().getProperties().get("userId").toString();
+                loggedUserProfile.setUserId(row.getDocument().getProperties().get("userId").toString());
+                loggedUserProfile.setUserName(row.getDocument().getProperties().get("userName").toString());
             }
 
         } catch (CouchbaseLiteException e) {
             e.printStackTrace();
         }
-        return loggedUserId;
+        return loggedUserProfile;
     }//end of method
 
 }

@@ -13,6 +13,7 @@ import com.couchbase.lite.QueryEnumerator;
 import com.couchbase.lite.QueryRow;
 import com.couchbase.lite.View;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -54,8 +55,16 @@ public class FetchPersonDB {
         Map<String, Object> docContent = doc.getProperties();
 
         owner.setId(doc.getId());
-        owner.setName(docContent.get("name").toString());
-        owner.setSurname(docContent.get("surname").toString());
+        if(docContent.get("name")!=null){
+            owner.setName(docContent.get("name").toString());
+        }else{
+            owner.setName("");
+        }
+        if(docContent.get("surname")!=null){
+            owner.setSurname(docContent.get("surname").toString());
+        }else{
+            owner.setSurname("");
+        }
 
         // return the object
         return owner;
@@ -74,10 +83,34 @@ public class FetchPersonDB {
         Map<String, Object> docContent = doc.getProperties();
 
         subject.setPersonId(doc.getId());
-        subject.setName(docContent.get("name").toString());
-        subject.setSurname(docContent.get("surname").toString());
-        subject.setGender(docContent.get("gender").toString());
-        subject.setLeftHanded(Boolean.parseBoolean(docContent.get("lefthanded").toString()));
+        if(docContent.get("name")!=null){
+            subject.setName(docContent.get("name").toString());
+        }else{
+            subject.setName("");
+        }
+        if(docContent.get("surname")!=null){
+            subject.setSurname(docContent.get("surname").toString());
+        }else{
+            subject.setSurname("");
+        }
+        if(docContent.get("gender")!=null){
+            subject.setGender(docContent.get("gender").toString());
+        }else{
+            subject.setGender("");
+        }
+        if(docContent.get("lefthanded")!=null){
+            subject.setLeftHanded(Boolean.parseBoolean(docContent.get("lefthanded").toString()));
+        }else{
+            subject.setLeftHanded(false);
+        }
+        if(docContent.get("birthday")!=null){
+
+
+
+        }else{
+            subject.setAge(0);
+        }
+
 
         // return the object
         return subject;
@@ -113,15 +146,51 @@ public class FetchPersonDB {
                 //Fetch all person records
                 Person person = new Person();
                 person.setId(row.getDocumentId().toString());
-                person.setName(row.getDocument().getProperties().get("name").toString());
-                person.setSurname(row.getDocument().getProperties().get("surname").toString());
-                person.setBirthday(row.getDocument().getProperties().get("birthday").toString());
-                person.setGender(row.getDocument().getProperties().get("gender").toString());
-                person.setEmail(row.getDocument().getProperties().get("email").toString());
-                person.setLeftHanded(row.getDocument().getProperties().get("lefthanded").toString());
-                person.setNotes(row.getDocument().getProperties().get("notes").toString());
-                person.setPhone(row.getDocument().getProperties().get("phone").toString());
-                person.setDef_group_id(row.getDocument().getProperties().get("def_group_id").toString());
+                if(row.getDocument().getProperties().get("name")!=null){
+                    person.setName(row.getDocument().getProperties().get("name").toString());
+                }else{
+                    person.setName("");
+                }
+                if(row.getDocument().getProperties().get("surname")!=null){
+                    person.setSurname(row.getDocument().getProperties().get("surname").toString());
+                }else{
+                    person.setSurname("");
+                }
+                if(row.getDocument().getProperties().get("birthday")!=null){
+                    person.setBirthday(row.getDocument().getProperties().get("birthday").toString());
+                }else{
+                    person.setBirthday("");
+                }
+                if(row.getDocument().getProperties().get("gender")!=null){
+                    person.setGender(row.getDocument().getProperties().get("gender").toString());
+                }else{
+                    person.setGender("");
+                }
+                if(row.getDocument().getProperties().get("email")!=null){
+                    person.setEmail(row.getDocument().getProperties().get("email").toString());
+                }else{
+                    person.setEmail("");
+                }
+                if(row.getDocument().getProperties().get("lefthanded")!=null){
+                    person.setLeftHanded(row.getDocument().getProperties().get("lefthanded").toString());
+                }else{
+                    person.setLeftHanded("");
+                }
+                if(row.getDocument().getProperties().get("notes")!=null){
+                    person.setNotes(row.getDocument().getProperties().get("notes").toString());
+                }else{
+                    person.setNotes("");
+                }
+                if(row.getDocument().getProperties().get("phone")!=null){
+                    person.setPhone(row.getDocument().getProperties().get("phone").toString());
+                }else{
+                    person.setPhone("");
+                }
+                if(row.getDocument().getProperties().get("group_id")!=null){
+                    person.setDef_group_id(row.getDocument().getProperties().get("group_id").toString());
+                }else{
+                    person.setDef_group_id("");
+                }
 
                 fetchedPersonList.add(person);
 

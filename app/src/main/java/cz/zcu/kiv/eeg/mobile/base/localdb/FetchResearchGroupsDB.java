@@ -62,7 +62,12 @@ public class FetchResearchGroupsDB {
         rg.setGroupId(doc.getId());
         rg.setGroupName(docContent.get("group_name").toString());
         rg.setOwnerId(docContent.get("owner_id").toString());
-        rg.setDescription(docContent.get("description").toString());
+        if(docContent.get("description")!=null){
+            rg.setDescription(docContent.get("description").toString());
+        }else{
+            rg.setDescription("");
+        }
+
 
         // return the object
         return rg;
@@ -70,105 +75,58 @@ public class FetchResearchGroupsDB {
 
     public void FetchAllResearchGroups(String viewName, final String type, ResearchGroupAdapter researchGroupAdapter){
 
-        View researchGroupView = database.getView(viewName);
-
-        researchGroupView.setMap(new Mapper() {
-            @Override
-            public void map(Map<String, Object> document, Emitter emitter) {
-                if (document.get("type").equals(type)) {
-                    HashMap<String, Object> value = new HashMap<String, Object>();
-                    value.put("description", (String) document.get("description"));
-                    emitter.emit(document.get("group_name"), value);
-                }else{
-//                    Toast.makeText(ctx, "No such document(s) in the database", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, "2");
-
-        Query query = database.getView(viewName).createQuery();
         List<ResearchGroup> fetchedResearchGroupList = new ArrayList<ResearchGroup>();
 
         SharedPreferences getLoggedUserId= ctx.getSharedPreferences(Values.PREFS_TEMP, Context.MODE_PRIVATE);
         String loggeduserDocID          = getLoggedUserId.getString("loggedUserDocID", null);
-        String loggeduserDefGrpId       = getLoggedUserId.getString("loggedUserDefGrpID", null);
-        Log.i("eeg_loggedUserID", loggeduserDocID+"");
-        Log.i("eeg_loggedUserDefGrpID", loggeduserDefGrpId+"");
 
-        try {
-            QueryEnumerator result = query.run();
-            for (Iterator<QueryRow> it = result; it.hasNext(); ) {
-                QueryRow row = it.next();
-                //get research groups if only the logged user is a member
-                if(row.getDocument().getProperties().get("owner_id").toString().equals(loggeduserDocID)){
-                    ResearchGroup researchGroup = new ResearchGroup();
-                    researchGroup.setGroupId(row.getDocumentId().toString());
-                    researchGroup.setGroupName(row.getDocument().getProperties().get("group_name").toString());
-                    researchGroup.setDescription(row.getDocument().getProperties().get("description").toString());
-                    researchGroup.setOwnerId(row.getDocument().getProperties().get("owner_id").toString());
-                    fetchedResearchGroupList.add(researchGroup);
-                }
-            }
+        View membershipView = database.getView("MembershipView");
 
-            //getting the groups where the logged user is a member (not owner)
-
-            //Get All Membership documents, and from them, get the group-ids where logged user is a member
-
-
-            View membershipView = database.getView("MembershipView");
-
-            membershipView.setMap(new Mapper() {
-                @Override
-                public void map(Map<String, Object> document, Emitter emitter) {
-                    if (document.get("type").equals("Membership")) {
-                        HashMap<String, Object> value = new HashMap<String, Object>();
-                        value.put("group_id", (String) document.get("group_id"));
-                        emitter.emit(document.get("member_id"), value);
-                    }else{
+        membershipView.setMap(new Mapper() {
+            @Override
+            public void map(Map<String, Object> document, Emitter emitter) {
+                if (document.get("type").equals("Membership")) {
+                    HashMap<String, Object> value = new HashMap<String, Object>();
+                    value.put("group_id", (String) document.get("group_id"));
+                    emitter.emit(document.get("member_id"), value);
+                }else{
 //                    Toast.makeText(ctx, "No such document(s) in the database", Toast.LENGTH_SHORT).show();
-                    }
                 }
-            }, "1");
-
-            Query queryMembership = database.getView("MembershipView").createQuery();
-            List<String> groupIds = new ArrayList<String>();
-
-            try{
-                QueryEnumerator membershipResult = queryMembership.run();
-                for (Iterator<QueryRow> it = membershipResult; it.hasNext(); ) {
-                    QueryRow row = it.next();
-
-                    if(row.getDocument().getProperties().get("member_id").toString().equals(loggeduserDocID)){
-                        groupIds.add(row.getDocument().getProperties().get("group_id").toString());
-                    }
-                }
-
-            }catch (Exception e){
-                e.printStackTrace();
-
             }
+        }, "1");
 
-            //Got the group id list, then for each id in that list, run a get Group by id method to get the content of RG
+        Query queryMembership = database.getView("MembershipView").createQuery();
+        List<String> groupIds = new ArrayList<String>();
 
-            for (int i = 0; i <groupIds.size() ; i++) {
-                if(!groupIds.get(i).equals(loggeduserDefGrpId)){
-                    ResearchGroup rg = this.FetchResearchGroupById(groupIds.get(i));
-                    fetchedResearchGroupList.add(rg);
+        try{
+            QueryEnumerator membershipResult = queryMembership.run();
+            for (Iterator<QueryRow> it = membershipResult; it.hasNext(); ) {
+                QueryRow row = it.next();
+
+                if(row.getDocument().getProperties().get("member_id").toString().equals(loggeduserDocID)){
+                    groupIds.add(row.getDocument().getProperties().get("group_id").toString());
                 }
             }
 
-
-            Log.i("eeg_fetchedNumber", fetchedResearchGroupList.size()+"");
-
-            researchGroupAdapter.clear();
-            if (fetchedResearchGroupList != null && !fetchedResearchGroupList.isEmpty()){
-                for (ResearchGroup res : fetchedResearchGroupList) {
-                    researchGroupAdapter.add(res);
-                }
-            }
-
-        } catch (CouchbaseLiteException e) {
+        }catch (Exception e){
             e.printStackTrace();
+
         }
+
+        //Got the group id list, then for each id in that list, run a get Group by id method to get the content of RG
+
+        for (int i = 0; i <groupIds.size() ; i++) {
+            ResearchGroup rg = this.FetchResearchGroupById(groupIds.get(i));
+            fetchedResearchGroupList.add(rg);
+        }
+
+        researchGroupAdapter.clear();
+        if (fetchedResearchGroupList != null && !fetchedResearchGroupList.isEmpty()){
+            for (ResearchGroup res : fetchedResearchGroupList) {
+                researchGroupAdapter.add(res);
+            }
+        }
+
     }
 
     public String FetchMyDefaultResearchGroupId(String viewName, final String type, String loggedUserId){

@@ -128,11 +128,10 @@ public class ListAllScenariosFragment extends ListFragment implements SearchView
      */
     //This executes when user tap on the screen
     private void update() {
-
         CommonActivity activity = (CommonActivity) getActivity();
         //Fetch from local db
         db = new CBDatabase(Keys.DB_NAME, activity);
-        db.createScenarioView("fetchAllScenariosView", "Scenario",getAdapter());
+        db.createScenarioView(getActivity().getResources().getString(R.string.view_fetch_all_scenarios), getActivity().getResources().getString(R.string.doc_type_scenario),getAdapter());
 
 //        if (ConnectionUtils.isOnline(activity)) {
 //            new FetchScenarios(activity, getAdapter(), Values.SERVICE_QUALIFIER_ALL).execute();

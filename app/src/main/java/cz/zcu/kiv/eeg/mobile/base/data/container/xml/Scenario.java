@@ -70,6 +70,7 @@ public class Scenario implements Parcelable {
     private String researchGroupId;
     private String filePath;
     private String ownerId;
+    private String ownerUserName;
 
     public Scenario() {
     }
@@ -182,6 +183,14 @@ public class Scenario implements Parcelable {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public String getOwnerUserName() {
+        return ownerUserName;
+    }
+
+    public void setOwnerUserName(String ownerUserName) {
+        this.ownerUserName = ownerUserName;
     }
 
     @Override

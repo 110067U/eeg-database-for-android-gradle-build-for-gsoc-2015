@@ -43,6 +43,7 @@ import cz.zcu.kiv.eeg.mobile.base.data.container.xml.ResearchGroup;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.ScenarioSimple;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.Software;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.Subject;
+import cz.zcu.kiv.eeg.mobile.base.data.container.xml.UserProfile;
 import cz.zcu.kiv.eeg.mobile.base.data.container.xml.Weather;
 import cz.zcu.kiv.eeg.mobile.base.utils.ErrorChecker;
 
@@ -104,55 +105,19 @@ public class CBDatabase {
         }
     }
 
-//	/* Replication *********************************/
-//
-//    /**
-//     * Create a push/pull Replica that is continuous/one-shot
-//     * @param remote URL (Server or P2P)
-//     * @param push: local DB --> remote DB
-//     *        pull: remote DB --> local DB
-//     * @param continuous: stay active indefinitely,
-//     *        one-shot: transfer all changes, then quit.
-//     * @return
-//     */
-//    public Replication startReplica( URL remote, Keys.Replica pushOrPull, Keys.Span span){
-//
-//        replica = (pushOrPull == Keys.Replica.PUSH)
-//                ? database.createPushReplication(remote)
-//                : database.createPullReplication(remote);
-//
-//        replica.setContinuous(span == Keys.Span.CONTINUOUS ? true : false);
-//        replica.start();//a replication runs asynchronously
-//
-//        return replica;
-//    }
-//
-//    /**
-//     * A replica can be active/stopped/off-line/idle
-//     * @param rep
-//     * @return
-//     */
-//    public boolean isReplicaActive( Replication rep){
-//        return rep != null && (rep.getStatus() ==
-//                Replication.ReplicationStatus.REPLICATION_ACTIVE);
-//    }
 
-    //Retrive user profile data
-
-    public String fetchUserProfileData(){
-        String loggedUserId = null;
-
-        loggedUserId = new FetchUserProfileDB(database,ctx).FetchUserProfile("fetchUserData","Profile");
-
-        return loggedUserId;
+    public UserProfile fetchUserProfileData(){
+        UserProfile up = new UserProfile();
+        up = new FetchUserProfileDB(database,ctx).FetchUserProfile(ctx.getResources().getString(R.string.view_fetch_user_data),ctx.getResources().getString(R.string.doc_type_profile));
+        return up;
     }
 
 
     //Retrieve data using views when we want to fetch specific data
     public void createScenarioView(String viewName, final String type, ScenarioAdapter scenarioAdapter){
-        if(viewName.equals("fetchMyScenariosView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_my_scenarios))){
             new FetchScenariosDB(database,ctx).FetchMyScenarios(viewName, type, scenarioAdapter);
-        }else if(viewName.equals("fetchAllScenariosView")){
+        }else if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_all_scenarios))){
             new FetchScenariosDB(database,ctx).FetchAllScenarios(viewName,type,scenarioAdapter);
         }
     }
@@ -162,7 +127,7 @@ public class CBDatabase {
     }
 
     public void createResearchGroupView(String viewName, final String type, ResearchGroupAdapter researchGroupAdapter){
-        if(viewName.equals("fetchResearchGroupsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_res_groups))){
             new FetchResearchGroupsDB(database,ctx).FetchAllResearchGroups(viewName, type, researchGroupAdapter);
         }
     }
@@ -172,14 +137,14 @@ public class CBDatabase {
     }
 
 
-    public String fetchDefaultResearchGroup(String loggedUserId){
-        String defResGrpId = new FetchResearchGroupsDB(database,ctx).FetchMyDefaultResearchGroupId("defResGrp","Group",loggedUserId);
-        return  defResGrpId;
-    }
+//    public String fetchDefaultResearchGroup(String loggedUserId){
+//        String defResGrpId = new FetchResearchGroupsDB(database,ctx).FetchMyDefaultResearchGroupId("defResGrp","Group",loggedUserId);
+//        return  defResGrpId;
+//    }
 
 
     public void createPersonView(String viewName, final String type, PersonAdapter personAdapter){
-        if(viewName.equals("fetchPersonView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_persons))){
             new FetchPersonDB(database,ctx).FetchPerson(viewName, type, personAdapter);
         }
     }
@@ -193,7 +158,7 @@ public class CBDatabase {
     }
 
     public void createArtifactView(String viewName, final String type, ArtifactAdapter artifactAdapter){
-        if(viewName.equals("fetchAllArtifactView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_artifacts))){
             new FetchArtifactsDB(database,ctx).FetchAllArtifacts(viewName, type, artifactAdapter);
         }
     }
@@ -203,7 +168,7 @@ public class CBDatabase {
     }
 
     public void createDigitizationView(String viewName, final String type, DigitizationAdapter digitizationAdapter){
-        if(viewName.equals("fetchAllDigitizationView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_digitizations))){
             new FetchDigitizationsDB(database,ctx).FetchAllDigitizations(viewName, type, digitizationAdapter);
         }
     }
@@ -213,7 +178,7 @@ public class CBDatabase {
     }
 
     public void createHardwareView(String viewName, final String type, HardwareAdapter hardwareAdapter){
-        if(viewName.equals("fetchAllHardwareView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_all_hardware))){
             new FetchHardwareListDB(database,ctx).FetchAllHardware(viewName, type, hardwareAdapter);
         }
     }
@@ -223,7 +188,7 @@ public class CBDatabase {
     }
 
     public void createSoftwareView(String viewName, final String type, SoftwareAdapter softwareAdapter){
-        if(viewName.equals("fetchAllSoftwareView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_all_software))){
             new FetchSoftwareListDB(database,ctx).FetchAllSoftware(viewName, type, softwareAdapter);
         }
     }
@@ -233,7 +198,7 @@ public class CBDatabase {
     }
 
     public void createDiseasesView(String viewName, final String type, DiseaseAdapter diseaseAdapter){
-        if(viewName.equals("fetchAllDiseasesView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_all_diseases))){
             new FetchDiseaseListDB(database,ctx).FetchAllDiseases(viewName, type, diseaseAdapter);
         }
     }
@@ -243,7 +208,7 @@ public class CBDatabase {
     }
 
     public void createPharmaceuticalsView(String viewName, final String type, PharmaceuticalAdapter pharmaceuticalAdapter){
-        if(viewName.equals("fetchAllPharmaceuticalsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_all_pharmaceuticals))){
             new FetchPharmaceuticalsListDB(database,ctx).FetchAllPharmaceuticals(viewName, type, pharmaceuticalAdapter);
         }
     }
@@ -254,7 +219,7 @@ public class CBDatabase {
 
 
     public void createWeatherView(String viewName, final String type, WeatherAdapter weatherAdapter, String resGroupId){
-        if(viewName.equals("fetchWeatherRecordsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_weather))){
             new FetchWeatherListDB(database,ctx).FetchWeatherRecords(viewName, type, weatherAdapter, resGroupId);
         }
     }
@@ -264,7 +229,7 @@ public class CBDatabase {
     }
 
     public void createElectrodeSystemView(String viewName, final String type, ElectrodeSystemAdapter electrodeSystemAdapter){
-        if(viewName.equals("fetchAllElectrodeSystemRecordsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_electrode_systems))){
             new FetchElectrodeSystemsListDB(database,ctx).FetchAllElectrodeSystemRecords(viewName, type, electrodeSystemAdapter);
         }
     }
@@ -274,7 +239,7 @@ public class CBDatabase {
     }
 
     public void createElectrodeLocationView(String viewName, final String type, ElectrodeLocationAdapter electrodeLocationAdapter){
-        if(viewName.equals("fetchAllElectrodeLocationRecordsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_electrode_locations))){
             new FetchElectrodeLocationsListDB(database,ctx).FetchAllElectrodeLocations(viewName, type, electrodeLocationAdapter);
         }
     }
@@ -284,19 +249,19 @@ public class CBDatabase {
     }
 
     public void createElectrodeFixesView(String viewName, final String type, ElectrodeFixAdapter electrodeFixAdapter){
-        if(viewName.equals("fetchAllElectrodeFixRecordsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_electrode_fix))){
             new FetchElectrodeFixesListDB(database,ctx).FetchAllElectrodeFixRecords(viewName, type, electrodeFixAdapter);
         }
     }
 
     public void createElectrodeTypesView(String viewName, final String type, ElectrodeTypeAdapter electrodeTypeAdapter){
-        if(viewName.equals("fetchAllElectrodeTypeRecordsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_electrode_type))){
             new FetchElectrodeTypesListDB(database,ctx).FetchAllElectrodeTypeRecords(viewName, type, electrodeTypeAdapter);
         }
     }
 
     public void createExperimentView(String viewName, final String type, ExperimentAdapter experimentAdapter){
-        if(viewName.equals("fetchMyExperimentsView")){
+        if(viewName.equals(ctx.getResources().getString(R.string.view_fetch_my_experiments))){
             new FetchExperimentsDB(database,ctx).FetchMyExperiments(viewName, type, experimentAdapter);
         }
     }

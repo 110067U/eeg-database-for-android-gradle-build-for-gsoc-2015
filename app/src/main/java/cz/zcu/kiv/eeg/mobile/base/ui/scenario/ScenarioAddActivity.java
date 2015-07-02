@@ -102,7 +102,7 @@ public class ScenarioAddActivity extends SaveDiscardActivity implements View.OnC
 //===================================================================Database Code==================================================//
         CommonActivity activity = (CommonActivity) this;
         db = new CBDatabase(Keys.DB_NAME, activity);
-        db.createResearchGroupView("fetchResearchGroupsView","Group",researchGroupAdapter);
+        db.createResearchGroupView(ScenarioAddActivity.this.getResources().getString(R.string.view_fetch_res_groups),ScenarioAddActivity.this.getResources().getString(R.string.doc_type_research_group),researchGroupAdapter);
 
 // ================================================================================================================================//
 //        } else {
@@ -134,6 +134,7 @@ public class ScenarioAddActivity extends SaveDiscardActivity implements View.OnC
 
         SharedPreferences getOwner = getSharedPreferences(Values.PREFS_TEMP, Context.MODE_PRIVATE);
         String loggeduserDocID    = getOwner.getString("loggedUserDocID", null);
+        String loggeduserName    = getOwner.getString("loggedUserName", null);
 
         //creating scenario instance
         Scenario scenario = new Scenario();
@@ -146,6 +147,7 @@ public class ScenarioAddActivity extends SaveDiscardActivity implements View.OnC
         scenario.setFilePath(selectedFile);
         scenario.setFileLength(String.valueOf(selectedFileLength));
         scenario.setOwnerId(loggeduserDocID);
+        scenario.setOwnerUserName(loggeduserName);
 
         validateAndRun(scenario);
     }
@@ -183,16 +185,17 @@ public class ScenarioAddActivity extends SaveDiscardActivity implements View.OnC
             db = new CBDatabase(Keys.DB_NAME, ScenarioAddActivity.this);
             // create an object that contains data for a document
             Map<String, Object> docContent = new HashMap<String, Object>();
-            docContent.put("type", "Scenario");
-            docContent.put("scenarioName", scenario.getScenarioName().toString());
-            docContent.put("researchGroupId", scenario.getResearchGroupId());
-            docContent.put("description", scenario.getDescription().toString());
-            docContent.put("mimeType", scenario.getMimeType().toString());
-            docContent.put("fileName", scenario.getFileName().toString());
-            docContent.put("isPrivate", scenario.isPrivate());
-            docContent.put("filePath", scenario.getFilePath());
-            docContent.put("fileLength", scenario.getFileLength());
-            docContent.put("ownerId", scenario.getOwnerId());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_type), ScenarioAddActivity.this.getResources().getString(R.string.doc_type_scenario));
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_scenario_name), scenario.getScenarioName().toString());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_res_grp_id), scenario.getResearchGroupId());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_description), scenario.getDescription().toString());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_mime), scenario.getMimeType().toString());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_file_name), scenario.getFileName().toString());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_isprivate), scenario.isPrivate());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_file_path), scenario.getFilePath());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_file_length), scenario.getFileLength());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_owner_id), scenario.getOwnerId());
+            docContent.put(ScenarioAddActivity.this.getResources().getString(R.string.attribute_owner_user_name), scenario.getOwnerUserName());
 
             String docId = null;
             try {

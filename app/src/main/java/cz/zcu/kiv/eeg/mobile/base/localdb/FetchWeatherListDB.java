@@ -51,8 +51,16 @@ public class FetchWeatherListDB {
         Map<String, Object> docContent = doc.getProperties();
 
         weather.setWeatherId(doc.getId());
-        weather.setTitle(docContent.get("title").toString());
-        weather.setDescription(docContent.get("description").toString());
+        if(docContent.get("title")!=null){
+            weather.setTitle(docContent.get("title").toString());
+        }else{
+            weather.setTitle("");
+        }
+        if(docContent.get("description")!=null){
+            weather.setDescription(docContent.get("description").toString());
+        }else{
+            weather.setDescription("");
+        }
 
         // return the object
         return weather;
@@ -86,8 +94,16 @@ public class FetchWeatherListDB {
                 if(row.getDocument().getProperties().get("def_group_id").toString().equals(resGroupId)){
                     Weather weather = new Weather();
                     weather.setWeatherId(row.getDocumentId().toString());
-                    weather.setTitle(row.getDocument().getProperties().get("title").toString());
-                    weather.setDescription(row.getDocument().getProperties().get("description").toString());
+                    if(row.getDocument().getProperties().get("title")!=null){
+                        weather.setTitle(row.getDocument().getProperties().get("title").toString());
+                    }else{
+                        weather.setTitle("");
+                    }
+                    if(row.getDocument().getProperties().get("description")!=null){
+                        weather.setDescription(row.getDocument().getProperties().get("description").toString());
+                    }else{
+                        weather.setDescription("");
+                    }
                     fetchedWeatherList.add(weather);
                 }
             }

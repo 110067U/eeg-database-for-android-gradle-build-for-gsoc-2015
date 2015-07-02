@@ -631,7 +631,7 @@ public class ExperimentAddActivity extends SaveDiscardActivity implements View.O
         //Fetch from local db
         CommonActivity activity = (CommonActivity) this;
         db = new CBDatabase(Keys.DB_NAME, activity);
-        db.createResearchGroupView("fetchResearchGruopsView", "Research Group", getGroupAdapter());
+        db.createResearchGroupView("fetchResearchGroupsView", "Group", getGroupAdapter());
 //        if (ConnectionUtils.isOnline(this)) {
 //            new FetchResearchGroups(this, getGroupAdapter(), Values.SERVICE_QUALIFIER_MINE).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
 //        } else

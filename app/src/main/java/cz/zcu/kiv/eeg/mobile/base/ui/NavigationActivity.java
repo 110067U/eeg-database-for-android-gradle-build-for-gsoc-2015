@@ -59,6 +59,7 @@ import cz.zcu.kiv.eeg.mobile.base.R;
 import cz.zcu.kiv.eeg.mobile.base.archetypes.CommonActivity;
 import cz.zcu.kiv.eeg.mobile.base.data.Values;
 import cz.zcu.kiv.eeg.mobile.base.data.adapter.MenuAdapter;
+import cz.zcu.kiv.eeg.mobile.base.data.container.xml.UserProfile;
 import cz.zcu.kiv.eeg.mobile.base.localdb.CBDatabase;
 import cz.zcu.kiv.eeg.mobile.base.ui.dashboard.DashboardFragment;
 import cz.zcu.kiv.eeg.mobile.base.ui.datafile.DataFileUploadFragment;
@@ -99,40 +100,39 @@ public class NavigationActivity extends CommonActivity implements ListView.OnIte
         password = credentials.getString("password", null);
         SYNC_URL = credentials.getString("url", null);
 
-        Toast.makeText(NavigationActivity.this,"un= "+username+" pw= "+password+" url= "+SYNC_URL,Toast.LENGTH_LONG).show();
-
         db = new CBDatabase(Keys.DB_NAME, NavigationActivity.this);
         startSync();
 
-
         db = new CBDatabase(Keys.DB_NAME, NavigationActivity.this);
-        String getLoggedUserId = db.fetchUserProfileData();
-        String getDefaultResgrpId = db.fetchDefaultResearchGroup(getLoggedUserId);
+        UserProfile logged_up =  db.fetchUserProfileData();
+        String loggedUserId = logged_up.getUserId();
+        String loggedUserName = logged_up.getUserName();
+
+//      String getDefaultResgrpId = db.fetchDefaultResearchGroup(getLoggedUserId);
 
 
         SharedPreferences tempData = getSharedPreferences(Values.PREFS_TEMP, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = tempData.edit();
 
-        if(getLoggedUserId==null){
+        if(loggedUserId==null){
             Toast.makeText(NavigationActivity.this,"Error in pulling user profile data",Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(NavigationActivity.this,"user id= "+getLoggedUserId,Toast.LENGTH_LONG).show();
-            editor.putString("loggedUserDocID", getLoggedUserId);
+            Toast.makeText(NavigationActivity.this,"user id= "+loggedUserId+" userName="+loggedUserName,Toast.LENGTH_LONG).show();
+            editor.putString("loggedUserDocID", loggedUserId);
+            editor.putString("loggedUserName", loggedUserName);
             editor.commit();
         }
 
-        if(getDefaultResgrpId==null){
-            Toast.makeText(NavigationActivity.this,"Error in pulling def res grp",Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(NavigationActivity.this,"def res grp id= "+getDefaultResgrpId,Toast.LENGTH_LONG).show();
-            editor.putString("loggedUserDefGrpID", getDefaultResgrpId);
-            editor.commit();
-        }
+//        if(getDefaultResgrpId==null){
+//            Toast.makeText(NavigationActivity.this,"Error in pulling def res grp",Toast.LENGTH_LONG).show();
+//        }else{
+//            Toast.makeText(NavigationActivity.this,"def res grp id= "+getDefaultResgrpId,Toast.LENGTH_LONG).show();
+//            editor.putString("loggedUserDefGrpID", getDefaultResgrpId);
+//            editor.commit();
+//        }
 
         Database database = db.getDatabase();
         Toast.makeText(NavigationActivity.this,"doc count= "+database.getDocumentCount(),Toast.LENGTH_LONG).show();
-
-
 
         final ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(true);
